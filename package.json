@@ -1,0 +1,18 @@
+{
+  "name": "ratatoskr",
+  "version": "0.0.1",
+  "private": true,
+  "author": "acorn folk <devops@blueacorn.com>",
+  "description": "the nore messanger reborn as hubot",
+  "dependencies": {
+    "hubot": "^2.13.2",
+    "hubot-diagnostics": "0.0.1",
+    "hubot-help": "^0.1.1",
+    "hubot-hipchat": "^2.12.0-5",
+    "hubot-pugme": "^0.1.0",
+    "hubot-redis-brain": "0.0.3",
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
