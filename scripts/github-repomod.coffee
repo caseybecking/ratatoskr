@@ -38,7 +38,10 @@ module.exports = (robot) ->
     base_url = process.env.HUBOT_GITHUB_API || 'https://api.github.com'
     url = "#{base_url}/repos/#{repo}/hooks"
     
-    data = { active: 1, toggle: "hipchat", config: { "notify": 1, "auth_token": process.env.HUBOT_HIPCHAT_TOKEN, "room": room  } }
+    data = { active: toggle, name: "hipchat", config: { "notify": 1, "auth_token": process.env.HUBOT_HIPCHAT_TOKEN, "room": room  } }
+    
+    robot.logger.debug "Repoman calling: #{url} with data: "
+    robot.logger.debug data
     
     github.post url, data, (response) ->
       msg.send "The \"#{room}\" room will be notified when the #{repo} repository is updated."
