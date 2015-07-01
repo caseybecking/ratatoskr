@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "author": "acorn folk <devops@blueacorn.com>",
-  "description": "the nore messanger reborn as hubot",
+  "description": "the norse messanger reborn as hubot",
   "dependencies": {
     "githubot": "^1.0.0",
     "hubot": "^2.13.2",
