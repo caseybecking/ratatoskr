@@ -4,23 +4,27 @@
 # Dependencies:
 #   "githubot": ">=0.2.0"
 # 
-# Configuration:
-#   HUBOT_GITHUB_TOKEN
+# Required EnvVars: 
+#
+#   HUBOT_HIPCHAT_TOKEN  ( needs notification privileges )
+#
 #   HUBOT_GITHUB_USER
-#   HUBOT_GITHUB_API
+#   HUBOT_GITHUB_TOKEN 
 #   HUBOT_GITHUB_ORG
 #
-# Commands:
-#   hubot repo add-hipchat <repo> <room||"Water Cooler"> - add the hipchat service hook to <repo>. <room> is optional.
+# Optional EnvVars:
 #
-# Notes:
-#   HUBOT_GITHUB_API allows you to set a custom URL path (for Github enterprise users)
+#   HUBOT_GITHUB_API  (API endpoint [for GH enterprise users])
+#
+# Commands:
+#   hubot github-repomod add-hipchat <repo> <room||"Water Cooler"> - add the hipchat service hook to <repo>. <room> is optional, defaults to Water Cooler. Repo should be repo name without .git suffix.
+#
 
 
 module.exports = (robot) ->
   github = require("githubot")(robot)
   
-  robot.respond /repo add-hipchat ([A-Za-z0-9-_\/]+) ?([A-Za-z0-9-_ ]+)?/i, (msg) ->   
+  robot.respond /github-repomod add-hipchat ([A-Za-z0-9-_\/]+) ?([A-Za-z0-9-_ ]+)?/i, (msg) ->   
     room = msg.match[2] || 'Water Cooler'
     repo = msg.match[1]
     
